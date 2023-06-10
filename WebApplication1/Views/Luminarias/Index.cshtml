@@ -1,0 +1,292 @@
+﻿@model IEnumerable<WebApplication1.Models.Luminaria>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    #map {
+        height: 350px;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <aside id="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="" />
+                    <h2>LUX<span class="color-primary">IFER</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp"> close </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> dashboard </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a asp-area="" asp-controller="Clientes" asp-action="Index">
+                    <span class="material-icons-sharp"> groups </span>
+                    <h3>Clientes</h3>
+                </a>
+                <a asp-area="" asp-controller="Luminarias" asp-action="Index" class="active">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Luminárias</h3>
+                </a>
+                <a asp-area="" asp-controller="Grupos" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Grupos</h3>
+                </a>
+                <a asp-area="" asp-controller="Help" asp-action="Index">
+                    <span class="material-icons-sharp"> help </span>
+                    <h3>Help Center</h3>
+                </a>
+                <a asp-area="" asp-controller="Settings" asp-action="Index">
+                    <span class="material-icons-sharp"> settings </span>
+                    <h3>Settings</h3>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+
+        <main>
+
+            <h1>Luminárias Associadas</h1>
+
+            <div id="map"></div>
+
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Modelo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Cidade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Pais)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.id_cliente)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.id_grupo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Latitude)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Longitude)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Modelo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cidade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pais)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id_cliente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.id_grupo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Latitude)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Longitude)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+}
+    </tbody>
+            </table>
+        
+            
+            <div class="luminaria-specs">
+                <div class="header">
+                    <span class="material-icons-sharp">lightbulb</span>
+
+                    <h2>LAMP665533</h2>
+                </div>
+                <div class="specs-luminaria">
+                    <h1>Geral</h1>
+                    <div class="specs">
+                        <h2>Nome do Objeto:</h2>
+                        <h2>LAMP665533</h2>
+                    </div>
+                    <div class="specs">
+                        <h2>Modelo do Objeto:</h2>
+                        <h2>Luxifer L1</h2>
+                    </div>
+                    <div class="specs">
+                        <h2>Localização:</h2>
+                        <h2>41º24'12.2"N 2º10´26.5"E</h2>
+                    </div>
+                    <div class="specs">
+                        <h2>Cidade:</h2>
+                        <h2>Coimbra</h2>
+                    </div>
+                    <div class="specs">
+                        <h2>País:</h2>
+                        <h2>Portugal</h2>
+                    </div>
+
+
+                </div>
+        </div>
+        </main>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b>Diogo</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/images/foto.jpeg" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="estatisticas">
+                <div class="header">
+                    <h1>Estatisticas</h1>
+                    <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Data de instalação</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Última revisão</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estatisticas">
+                <div class="header">
+                    <h1>Estatisticas</h1>
+                    <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Data de instalação</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Última revisão</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+        var markers = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+
+
+
+        // Initialize the map
+        var map = L.map('map').setView([0, 0], 2);
+
+        // Load and display the tile layer (e.g., OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(map);
+
+        // Add markers to the map
+        markers.forEach(function (marker) {
+            L.marker([marker.Latitude, marker.Longitude]).addTo(map);
+        });
+    </script>
+    
+</body>
+

@@ -1,0 +1,122 @@
+﻿@model WebApplication1.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<body>
+    <div class="container">
+        <aside id="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="" />
+                    <h2>LUX<span class="color-primary">IFER</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp"> close </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> dashboard </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a asp-area="" asp-controller="Clientes" asp-action="Index" class="active">
+                    <span class="material-icons-sharp"> groups </span>
+                    <h3>Clientes</h3>
+                </a>
+                <a asp-area="" asp-controller="Luminarias" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Luminárias</h3>
+                </a>
+                <a asp-area="" asp-controller="Grupos" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Grupos</h3>
+                </a>
+                <a asp-area="" asp-controller="Help" asp-action="Index">
+                    <span class="material-icons-sharp"> help </span>
+                    <h3>Help Center</h3>
+                </a>
+                <a asp-area="" asp-controller="Settings" asp-action="Index">
+                    <span class="material-icons-sharp"> settings </span>
+                    <h3>Settings</h3>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+<h1>Editar Cliente</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <div class="did-floating-label-content">
+                                <label asp-for="Nome" class="control-label did-floating-label"></label>
+                                <input asp-for="Nome" class="form-control did-floating-input" />
+                                <span asp-validation-for="Nome" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="did-floating-label-content">
+                                <label asp-for="Email" class="control-label did-floating-label"></label>
+                                <input asp-for="Email" class="form-control did-floating-input" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="did-floating-label-content">
+                                <label asp-for="Telefone" class="control-label did-floating-label"></label>
+                                <input asp-for="Telefone" class="form-control did-floating-input" />
+                                <span asp-validation-for="Telefone" class="text-danger"></span>
+                            </div>
+                        </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+        </main>
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b>Diogo</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/images/foto.jpeg" alt="" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script src="./index.js"></script>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
