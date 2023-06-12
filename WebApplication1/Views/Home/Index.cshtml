@@ -41,7 +41,7 @@
                     <span class="material-icons-sharp"> lightbulb </span>
                     <h3>Grupos</h3>
                 </a>
-                <a asp-area="" asp-controller="Help" asp-action="Index">
+                <a asp-area="" asp-controller="Home" asp-action="HelpCenter">
                     <span class="material-icons-sharp"> help </span>
                     <h3>Help Center</h3>
                 </a>
@@ -57,11 +57,10 @@
         </aside>
 
         <main>
-            <h1>Overview</h1>
-
-            <div class="date">
-                <input type="date" />
+            <div class="headerClientes">
+                <h1>Overview</h1>
             </div>
+            
 
             <div class="insights">
                 <!--GRUPOS ATIVOS-->
@@ -326,5 +325,4 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"></script>
     <script src="~/js/mapa.js" asp-append-version="true"></script>
-    
 </body>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication1.Models.Luminaria>
+﻿  @model IEnumerable<WebApplication1.Models.Luminaria>
 
 
 @{
@@ -9,7 +9,6 @@
     #map {
         height: 350px;
     }
-
 </style>
 
 <body>
@@ -41,7 +40,7 @@
                     <span class="material-icons-sharp"> lightbulb </span>
                     <h3>Grupos</h3>
                 </a>
-                <a asp-area="" asp-controller="Help" asp-action="Index">
+                <a asp-area="" asp-controller="Home" asp-action="HelpCenter">
                     <span class="material-icons-sharp"> help </span>
                     <h3>Help Center</h3>
                 </a>
@@ -63,9 +62,7 @@
 
             <div id="map"></div>
 
-            <p>
-                <a asp-action="Create">Create New</a>
-            </p>
+
             <table class="table">
                 <thead>
                     <tr>
@@ -97,40 +94,40 @@
                     </tr>
                 </thead>
                 <tbody>
-            @foreach (var item in Model) {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Modelo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Cidade)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Pais)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.id_cliente)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.id_grupo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Latitude)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Longitude)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Estado)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        </td>
-                    </tr>
-}
-    </tbody>
+                    @foreach (var item in Model) {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Modelo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cidade)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Pais)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.id_cliente)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.id_grupo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Latitude)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Longitude)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                    }
+                </tbody>
             </table>
         
             
@@ -266,7 +263,7 @@
             </div>
         </div>
     </div>
-    
+
     <script>
 
         var markers = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
@@ -287,6 +284,8 @@
             L.marker([marker.Latitude, marker.Longitude]).addTo(map);
         });
     </script>
+    
+   
     
 </body>
 

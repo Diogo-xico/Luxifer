@@ -21,9 +21,9 @@ namespace WebApplication1.Controllers
         // GET: Luminarias
         public async Task<IActionResult> Index()
         {
-              return _context.Luminaria != null ? 
-                          View(await _context.Luminaria.ToListAsync()) :
-                          Problem("Entity set 'Context.Luminaria'  is null.");
+            return _context.Luminaria != null ?
+                        View(await _context.Luminaria.ToListAsync()) :
+                        Problem("Entity set 'Context.Clientes'  is null.");
         }
 
         // GET: Luminarias/Details/5

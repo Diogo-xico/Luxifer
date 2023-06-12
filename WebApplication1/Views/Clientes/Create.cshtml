@@ -4,197 +4,200 @@
     ViewData["Title"] = "Create";
 }
 <body>
-<div class="container">
-<aside id="sidebar">
-    <div class="top">
-        <div class="logo">
-                    <img src="/images/logo.png" alt="" />
-            <h2>LUX<span class="color-primary">IFER</span></h2>
-        </div>
-        <div class="close" id="close-btn">
-            <span class="material-icons-sharp"> close </span>
-        </div>
-    </div>
-    <div class="sidebar">
-        <a asp-area="" asp-controller="Home" asp-action="Index">
-            <span class="material-icons-sharp"> dashboard </span>
-            <h3>Dashboard</h3>
-        </a>
-        <a asp-area="" asp-controller="Clientes" asp-action="Index" class="active">
-            <span class="material-icons-sharp"> groups </span>
-            <h3>Clientes</h3>
-        </a>
-        <a asp-area="" asp-controller="Luminarias" asp-action="Index">
-            <span class="material-icons-sharp"> lightbulb </span>
-            <h3>Luminárias</h3>
-        </a>
-        <a asp-area="" asp-controller="Grupos" asp-action="Index">
-            <span class="material-icons-sharp"> lightbulb </span>
-            <h3>Grupos</h3>
-        </a>
-        <a asp-area="" asp-controller="Help" asp-action="Index">
-            <span class="material-icons-sharp"> help </span>
-            <h3>Help Center</h3>
-        </a>
-        <a asp-area="" asp-controller="Settings" asp-action="Index">
-            <span class="material-icons-sharp"> settings </span>
-            <h3>Settings</h3>
-        </a>
-        <a asp-area="" asp-controller="Home" asp-action="Index">
-            <span class="material-icons-sharp"> logout </span>
-            <h3>Logout</h3>
-        </a>
-    </div>
-</aside>
-
-
-<main>
-
-        <div class="headerClientes">
-            <h1>Adicionar Cliente</h1>
-        </div>
-
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <h2>Telefone</h2>
-            <div class="form-group">
-                <div class="did-floating-label-content">
-                        <label asp-for="Nome" class="control-label did-floating-label"></label>
-                        <input asp-for="Nome" class="form-control did-floating-input" />
-                    <span asp-validation-for="Nome" class="text-danger"></span>
-                 </div>
-            </div>
-                <h2>Telefone</h2>
-            <div class="form-group">
-                <div class="did-floating-label-content">
-                        <label asp-for="Email" class="control-label did-floating-label"></label>
-                        <input asp-for="Email" type="email" class="form-control did-floating-input" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+    <div class="container">
+        <aside id="sidebar">
+            <div class="top">
+                <div class="logo">
+                            <img src="/images/logo.png" alt="" />
+                    <h2>LUX<span class="color-primary">IFER</span></h2>
                 </div>
-                
-            </div>
-            <h2>Telefone</h2>
-            <div class="form-group">
-                <div class="did-floating-label-content">
-                        <label asp-for="Telefone" class="control-label did-floating-label"></label>
-                        <input asp-for="Telefone" type="tel" pattern="[0-9]{9}" class="form-control did-floating-input" />
-                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp"> close </span>
                 </div>
             </div>
-            <div class="form-group">
-                
-                    <button type="submit"  class="modern-button1"><span class="material-icons-sharp"> person_add </span><h2>Adicionar Cliente</h2></button>
+            <div class="sidebar">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> dashboard </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a asp-area="" asp-controller="Clientes" asp-action="Index" class="active">
+                    <span class="material-icons-sharp"> groups </span>
+                    <h3>Clientes</h3>
+                </a>
+                <a asp-area="" asp-controller="Luminarias" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Luminárias</h3>
+                </a>
+                <a asp-area="" asp-controller="Grupos" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Grupos</h3>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="HelpCenter">
+                    <span class="material-icons-sharp"> help </span>
+                    <h3>Help Center</h3>
+                </a>
+                <a asp-area="" asp-controller="Settings" asp-action="Index">
+                    <span class="material-icons-sharp"> settings </span>
+                    <h3>Settings</h3>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h3>Logout</h3>
+                </a>
             </div>
-        </form>
+        </aside>
+
+
+        <main>
+
+     
+       
+            <div class="formulario">
+                <h1 class="form-title">Adicionar Cliente</h1>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="main-user-info">
+                        <div class="txt_field">
+                            <input asp-for="Nome" type="text" required>
+                            <span></span>
+                            <label asp-for="Nome"></label>
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Email" type="text" required>
+                            <span></span>
+                            <label asp-for="Email"></label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Telefone" type="number" required>
+                            <span></span>
+                            <label asp-for="Telefone"></label>
+                            <span asp-validation-for="Telefone" class="text-danger"></span>
+
+                        </div>
+                       
+                        <div class="form-submit-btn">
+                            <input type="submit" value="Adicionar Cliente" class="btn btn-primary" />
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
    
 
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-</main>
+                <div>
+                    <a asp-action="Index">Back to List</a>
+                </div>
+        </main>
 
-    <div class="right">
-        <div class="top">
-            <button id="menu-btn">
-                <span class="material-icons-sharp">menu</span>
-            </button>
-            <div class="theme-toggler">
-                <span class="material-icons-sharp active">light_mode</span>
-                <span class="material-icons-sharp">dark_mode</span>
-            </div>
-            <div class="profile">
-                <div class="info">
-                    <p>Olá, <b>Diogo</b></p>
-                    <small class="text-muted">Admin</small>
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
                 </div>
-                <div class="profile-photo">
-                    <img src="/images/foto.jpeg" alt="" />
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b>Diogo</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/images/foto.jpeg" alt="" />
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="estatisticas">
-            <div class="header">
-                <h1>Estatisticas</h1>
-                <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
+            <div class="estatisticas">
+                <div class="header">
+                    <h1>Estatisticas</h1>
+                    <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Data de instalação</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Última revisão</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
             </div>
-            <div class="estatistica">
-                <span class="material-icons-sharp"> lightbulb </span>
-                <h4>Data de instalação</h4>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-            </div>
-            <div class="estatistica">
-                <span class="material-icons-sharp"> lightbulb </span>
-                <h4>Última revisão</h4>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-            </div>
-        </div>
 
-        <div class="estatisticas">
-            <div class="header">
-                <h1>Estatisticas</h1>
-                <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
-            </div>
-            <div class="estatistica">
-                <span class="material-icons-sharp"> lightbulb </span>
-                <h4>Data de instalação</h4>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
+            <div class="estatisticas">
+                <div class="header">
+                    <h1>Estatisticas</h1>
+                    <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
                 </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Data de instalação</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
                 </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-            </div>
-            <div class="estatistica">
-                <span class="material-icons-sharp"> lightbulb </span>
-                <h4>Última revisão</h4>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
-                </div>
-                <div class="date-time">
-                    <p>7 Nov, 2021</p>
-                    <small class="text-muted">9:14pm</small>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Última revisão</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="./index.js"></script>
+
+    
 
 </body>
 @section Scripts {

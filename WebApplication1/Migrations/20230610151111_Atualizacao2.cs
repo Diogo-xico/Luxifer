@@ -24,7 +24,7 @@ namespace WebApplication1.Migrations
                     id_grupo = table.Column<string>(type: "text", nullable: false),
                     Latitude = table.Column<string>(type: "text", nullable: false),
                     Longitude = table.Column<string>(type: "text", nullable: false),
-                    Estado = table.Column<bool>(type: "boolean", nullable: false)
+                    Estado = table.Column<bool>(type: "bool", nullable: false)
                 },
                 constraints: table =>
                 {

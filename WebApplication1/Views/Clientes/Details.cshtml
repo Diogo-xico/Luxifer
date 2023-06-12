@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.Cliente
+﻿    @model WebApplication1.Models.Cliente
 
 @{
     ViewData["Title"] = "Details";
@@ -38,7 +38,7 @@
                     <span class="material-icons-sharp"> lightbulb </span>
                     <h3>Grupos</h3>
                 </a>
-                <a asp-area="" asp-controller="Help" asp-action="Index">
+                <a asp-area="" asp-controller="Home" asp-action="HelpCenter">
                     <span class="material-icons-sharp"> help </span>
                     <h3>Help Center</h3>
                 </a>
@@ -54,30 +54,34 @@
         </aside>
         <main>
             <div class="headerClientes">
-                <h1>Detalhes de Cliente</h1>
-                <button class="modern-button"><span class="material-icons-sharp"> lightbulb </span><a asp-area="" asp-controller="Luminarias" asp-action="Create" asp-route-id="@Model?.Id"><h2>Adicionar Luminária</h2></a></button>
+                <div class="header-titulo"><h1>Detalhes de Cliente</h1></div>
+                <div class="header-button">
+                    <button class="modern-button"><span class="material-icons-sharp"> lightbulb </span><a asp-area="" asp-controller="Luminarias" asp-action="Create"><h2>Adicionar Luminária</h2></a></button>
+                </div>            
             </div>
             <div class="cliente-info">
 
-                <div class="cliente">
-                    <div class="profile-photo1">
-                        <img src="/images/foto.jpeg" alt="" />
+                    <div class="esquerda">
+                        <div class="profile-photo1">
+                            <img src="/images/foto.jpeg" alt="" />
+                        </div>
+                    </div>
+                    <div class="direita">
+                        <div class="info-nome">
+
+                            <h1>@Html.DisplayFor(model => model.Nome)</h1>
+                        </div>
+                        <div class="info">
+                            <h2>@Html.DisplayNameFor(model => model.Email): </h2>
+                            <h2>@Html.DisplayFor(model => model.Email)</h2>
+                        </div>
+                        <div class="info">
+                            <h2>@Html.DisplayNameFor(model => model.Telefone): </h2>
+                            <h2>@Html.DisplayFor(model => model.Telefone)</h2>
+                        </div>
                     </div>
 
-                    <div class="info">
-
-                        <h1>@Html.DisplayFor(model => model.Nome)</h1>
-                    </div>
-                    <div class="info">
-                        <h2>@Html.DisplayNameFor(model => model.Email):</h2>
-                        <h2>@Html.DisplayFor(model => model.Email)</h2>
-                    </div>
-                    <div class="info">
-                        <h2>@Html.DisplayNameFor(model => model.Telefone):</h2>
-                        <h2>@Html.DisplayFor(model => model.Telefone)</h2>
-                    </div>
-
-                </div>
+                    
 
             </div>
             <div>

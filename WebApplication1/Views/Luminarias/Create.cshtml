@@ -3,65 +3,269 @@
 @{
     ViewData["Title"] = "Create";
 }
+<style>
+   
+    #map {
+        
+        height: 350px;
+    }
+</style>
 
-<h1>Create</h1>
+<body>
+    <div class="container">
+        <aside id="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="" />
+                    <h2>LUX<span class="color-primary">IFER</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp"> close </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> dashboard </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a asp-area="" asp-controller="Clientes" asp-action="Index" class="active">
+                    <span class="material-icons-sharp"> groups </span>
+                    <h3>Clientes</h3>
+                </a>
+                <a asp-area="" asp-controller="Luminarias" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Luminárias</h3>
+                </a>
+                <a asp-area="" asp-controller="Grupos" asp-action="Index">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h3>Grupos</h3>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="HelpCenter">
+                    <span class="material-icons-sharp"> help </span>
+                    <h3>Help Center</h3>
+                </a>
+                <a asp-area="" asp-controller="Settings" asp-action="Index">
+                    <span class="material-icons-sharp"> settings </span>
+                    <h3>Settings</h3>
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">
+                    <span class="material-icons-sharp"> logout </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
 
-<h4>Luminaria</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Modelo" class="control-label"></label>
-                <input asp-for="Modelo" class="form-control" />
-                <span asp-validation-for="Modelo" class="text-danger"></span>
+
+        <main>
+
+            <hr />
+           
+                <div id="map"></div>
+           
+            
+
+            <div class="formulario">
+                <h1 class="form-title">Associar Luminária</h1>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="main-user-info">
+                        <div class="txt_field">
+                            <input asp-for="Modelo" type="text" required>
+                            <span></span>
+                            <label asp-for="Modelo"></label>
+                            <span asp-validation-for="Modelo" class="text-danger"></span>
+                            
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Cidade" type="text" required>
+                            <span></span>
+                            <label asp-for="Cidade"></label>
+                            <span asp-validation-for="Cidade" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Cidade" type="text" required>
+                            <span></span>
+                            <label asp-for="Cidade"></label>
+                            <span asp-validation-for="Cidade" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Pais" type="text" required>
+                            <span></span>
+                            <label asp-for="Pais"></label>
+                            <span asp-validation-for="Pais" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="id_cliente" type="text" required>
+                            <span></span>
+                            <label asp-for="id_cliente"></label>
+                            <span asp-validation-for="id_cliente" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="id_grupo" type="text" required>
+                            <span></span>
+                            <label asp-for="id_grupo"></label>
+                            <span asp-validation-for="id_grupo" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Latitude" id="input1" type="text" required>
+                            <span></span>
+                            <label asp-for="Latitude"></label>
+                            <span asp-validation-for="Latitude" class="text-danger"></span>
+
+                        </div>
+                        <div class="txt_field">
+                            <input asp-for="Longitude" id="input2"  type="text" required>
+                            <span></span>
+                            <label asp-for="Longitude"></label>
+                            <span asp-validation-for="Longitude" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-submit-btn">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                
+                    </div>
+
+                    
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Cidade" class="control-label"></label>
-                <input asp-for="Cidade" class="form-control" />
-                <span asp-validation-for="Cidade" class="text-danger"></span>
+
+        </main>
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Olá, <b>Diogo</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="/images/foto.jpeg" alt="" />
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Pais" class="control-label"></label>
-                <input asp-for="Pais" class="form-control" />
-                <span asp-validation-for="Pais" class="text-danger"></span>
+
+            <div class="estatisticas">
+                <div class="header">
+                    <h1>Estatisticas</h1>
+                    <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Data de instalação</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Última revisão</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="id_cliente" class="control-label"></label>
-                <input asp-for="id_cliente" class="form-control" />
-                <span asp-validation-for="id_cliente" class="text-danger"></span>
+
+            <div class="estatisticas">
+                <div class="header">
+                    <h1>Estatisticas</h1>
+                    <a href="#">More<span class="material-icons-sharp">chevron_right</span></a>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Data de instalação</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
+                <div class="estatistica">
+                    <span class="material-icons-sharp"> lightbulb </span>
+                    <h4>Última revisão</h4>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                    <div class="date-time">
+                        <p>7 Nov, 2021</p>
+                        <small class="text-muted">9:14pm</small>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="id_grupo" class="control-label"></label>
-                <input asp-for="id_grupo" class="form-control" />
-                <span asp-validation-for="id_grupo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Latitude" class="control-label"></label>
-                <input asp-for="Latitude" class="form-control" />
-                <span asp-validation-for="Latitude" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Longitude" class="control-label"></label>
-                <input asp-for="Longitude" class="form-control" />
-                <span asp-validation-for="Longitude" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <script src="./index.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([0, 0], 2);
+
+        // Create the tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define a variable for the marker
+        var marker;
+
+        // Function to handle the map click event
+        function onMapClick(e) {
+            if (marker) {
+                map.removeLayer(marker);
+            }
+
+            marker = L.marker(e.latlng).addTo(map);
+            document.getElementById("input1").value = e.latlng.lat;
+            document.getElementById("input2").value = e.latlng.lng;
+        }
+
+        // Add the map click event listener
+        map.on('click', onMapClick);
+    </script>
+
+</body>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

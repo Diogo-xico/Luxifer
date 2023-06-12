@@ -11,7 +11,6 @@
 
         public string id_cliente { get; set; }
         public string id_grupo { get; set; } 
-
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public bool Estado { get; set;}
