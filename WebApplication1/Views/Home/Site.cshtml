@@ -1,0 +1,239 @@
+﻿
+@{
+    ViewData["Title"] = "Site";
+}
+
+<link rel="stylesheet" href="~/css/siteInicial.css" asp-append-version="true" />
+
+<body>
+    <header class="header">
+      <nav class="nav">
+        <img
+          src="/img/logo1.png"
+          alt="Luxifer logo"
+          class="nav__logo"
+          id="logo"
+          data-version-number="3.0"
+        />
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Funcionalidades</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operações</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <!-- <h1 onclick="alert('HTML alert')"> -->
+        <h1>
+          The
+          <!-- Green highlight effect -->
+          <span class="highlight">future</span>
+          is<br />
+          <span class="highlight">Bright</span>
+        </h1>
+         <h1>
+          The
+          <!-- Green highlight effect -->
+          <span class="highlight">future</span>
+          is<br />
+          <span class="highlight">Luxifer</span>
+        </h1>
+        <button class="btn--text btn--scroll-to">Saiba Mais &DownArrow;</button>
+        <img
+          src="/img/hero.png"
+          class="header__img"
+          alt="Minimalist bank items"
+        />
+      </div>
+    </header>
+
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Funcionalidades</h2>
+        <h3 class="section__header">
+          Tudo o que tu precisas para um futuro sustentável.
+        </h3>
+      </div>
+
+      <div class="features">
+        <img
+          src="/img/digital-lazy.jpg"
+          data-src="/img/digital.jpg"
+          alt="Computer"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-monitor"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">100% dashboard control</h5>
+          <p>
+            Controla todo o teu sistema de lumninárias com o nosso sistema Luxifer.
+          </p>
+        </div>
+
+        <div class="features__feature">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-trending-up"></use>
+            </svg>
+          </div>
+          <h5 class="features__header">Veja a sua conta da luz crescer</h5>
+          <p>
+            Com o nosso sistema Luxifer nunca mais vais ter que pagar um rim a EDP.
+          </p>
+        </div>
+        <img
+          src="/img/grow-lazy.jpg"
+          data-src="/img/grow.jpg"
+          alt="Plant"
+          class="features__img lazy-img"
+        />
+      </div>
+    </section>
+
+    <section class="section" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Operações</h2>
+        <h3 class="section__header">
+          Tudo se torna simples com a nossa aplicação.
+        </h3>
+      </div>
+
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="btn operations__tab operations__tab--1 operations__tab--active"
+            data-tab="1"
+          >
+            <span>01</span>Tempo Real
+          </button>
+          <button class="btn operations__tab operations__tab--2" data-tab="2">
+            <span>02</span>Facil Organização
+          </button>
+          <button class="btn operations__tab operations__tab--3" data-tab="3">
+            <span>03</span>Segurança Máxima
+          </button>
+        </div>
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          <div class="operations__icon operations__icon--1">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-upload"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Receba estatisticas em tempo real.
+          </h5>
+          <p>
+              A possibilidade de receber estatísticas em tempo real sobre a Internet das Coisas (IoT) tem-se tornado cada vez mais relevante em vários setores. 
+              É possível obter OS dados atualizados A qualquer momento sobre o desempenho, o estado e as interações desses dispositivos. 
+              Essas estatísticas em tempo real permitem monitorizar de forma remota o funcionamento dos sistemas, identificar anomalias,
+              otimizar processos e tomar decisões com base em informações precisas e atualizadas.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <div class="operations__icon operations__icon--2">
+            <svg>
+              <use xlink:href="/img/icons.svg#icon-home"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Buy a home or make your dreams come true, with instant loans.
+          </h5>
+          <p>
+              A existência de um software com este tipo de facilidade de gestão sobre dispositivos IoT é fundamental 
+              para lidar com a crescente complexidade dos ambientes conectados. Com o aumento do número de dispositivos IoT em operação,
+              é necessário ter uma solução que simplifique a administração e o controle desses dispositivos de maneira eficiente.
+              Com um software de gestão intuitivo e eficaz, torna-se possível maximizar o potencial dos dispositivos IoT,
+              garantindo uma administração eficiente e um melhor desempenho dos dispositivos conectados.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="img/icons.svg#icon-user-x"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Sistema intrusivo contra 
+          </h5>
+          <p>
+              A segurança de gestão é um aspecto crítico quando se trata de dispositivos IoT,
+              e um software com recursos de segurança robustos desempenha um papel fundamental nessa área.
+              Além disso, o software  criptografia de dados em trânsito e armazenados. Ao utilizar um software com segurança de gestão para dispositivos IoT,
+              é possível mitigar riscos de violações de segurança e assegurar a integridade e a
+              confidencialidade dos dados transmitidos e armazenados nos sistemas conectados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sign-up">
+      <div class="section__title">
+        <h3 class="section__header">
+          O melhor dia para tu começares a usar o sistema Luxifer é hoje. Não esperes pelo amanhã!
+        </h3>
+      </div>
+      <button class="btn btn--show-modal">Faz Login Aqui!</button>
+    </section>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <img src="img/icon.png" alt="Logo" class="footer__logo" />
+      <p class="footer__copyright">
+        &copy; Copyright by
+        <a
+          class="footer__link twitter-link"
+          target="_blank"
+          href="#"
+          >Luxifer LDA</a
+        >.
+      </p>
+    </footer>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Open your bank account <br />
+        in just <span class="highlight">5 minutes</span>
+      </h2>
+      <form class="modal__form">
+        <label>First Name</label>
+        <input type="text" />
+        <label>Last Name</label>
+        <input type="text" />
+        <label>Email Address</label>
+        <input type="email" />
+        <button class="btn">Next step &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="~/js/siteInicial.js asp-append-version="true"></script>
+  </body>
